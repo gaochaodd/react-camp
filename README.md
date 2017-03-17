@@ -6,5 +6,5 @@ react-practices
 1. npm install
 2. npm start
 
-# autor
+# author
 zonebond@126.com
