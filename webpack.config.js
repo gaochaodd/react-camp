@@ -57,7 +57,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'React Todo App',
       favicon: resolve(__dirname, 'hamburger.ico'),
-      template: 'index.html'
+      templateContent: '<div id="root"></div>'
     })
   ]
 };
