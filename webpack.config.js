@@ -30,12 +30,15 @@ module.exports = {
     hot: true,
     publicPath: '/'
   },
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
   module: {
-    rules: [
+    loaders: [
       {
         test: /\.(js|jsx)$/,
-        use: ['babel-loader'],
-        exclude: /node_modules/
+        exclude: /node_modules/,
+        loader: 'babel-loader?presets[]=es2015&presets[]=react'
       },
       {
         test: /\.css$/,
@@ -53,7 +56,8 @@ module.exports = {
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
       title: 'React Todo App',
-      favicon: resolve(__dirname, 'hamburger.ico')
+      favicon: resolve(__dirname, 'hamburger.ico'),
+      template: 'index.html'
     })
   ]
 };
